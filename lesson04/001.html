@@ -9,6 +9,14 @@
         $("button").on("click", function() {
           $(this).closest(".confirmation").find(".ticket").slideDown();
         });
+
+        $(".confirmation").on("click", function() {
+          $.ajax("/confirmation.html", {
+            success: function() {
+              $(".ticket").html(response).slideDown();
+            }
+          });
+        });
       });
     </script>
   </head>
