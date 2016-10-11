@@ -1,14 +1,20 @@
-<!-- Page 121 ~ 123 -->
+<!-- Page 131 -->
 <!DOCTYPE html>
 <html>
   <head>
     <title>jQuery Adventures</title>
+    <script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#destinations li:odd").text("Seoul");
+      });
+    </script>
   </head>
   <body>
     <h1>Where do you want to go?</h1>
     <h2>Travel Destinations</h2>
     <p>Plan your next adventures</p>
-    <ul id='destinations'>
+    <ul id="destinations">
       <li>Rome</li>
       <li>Paris</li>
       <li class='promo'>Rio</li>
