@@ -9,6 +9,18 @@
         $("button").on("click", function() {
           $(this).closest(".confirmation").find(".ticket").slideDown();
         });
+
+        $(".viewTicket").on("click", function() {
+          $.ajax("http://localhost:8080/server/confirmation_error.jsp", {
+            success: function(response) {
+              $(".ticket").children("span").last().after(response).slideDown();
+              $(".viewTicket").remove();
+            },
+            error: function(request, errorType, errorMessage) {
+              alert("Error: " + errorType + " with message : " + errorMessage);
+            }
+          });
+        });
       });
     </script>
   </head>

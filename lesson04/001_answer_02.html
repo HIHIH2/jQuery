@@ -9,6 +9,18 @@
         $("button").on("click", function() {
           $(this).closest(".confirmation").find(".ticket").slideDown();
         });
+
+        $(".viewTicket").on("click", function() {
+          $.ajax("http://localhost:8080/server/confirmation_param.jsp", {
+            success: function(response) {
+              $(".ticket").children("span").last().after(response).slideDown();
+              $(".viewTicket").remove();
+            },
+            data: {
+              "confNum": 12334
+            }
+          });
+        });
       });
     </script>
   </head>
